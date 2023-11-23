@@ -1,0 +1,68 @@
+Bugs: 
+All bugs was found on staging environment. Tester was using Windows 10 and Chrome browser Wersja 119.0.6045.160 (64-bit)
+
+1.  ID: B-001	Found: 23.11.2023	Priority: High
+	Subject: Uncaught (in promise) undefined in JS console
+	
+	Steps to reproduce: 
+	1. Open chrome and devtools (make sure you have js console)
+	2. Go to: https://action.staging.focal.dev/
+	Actual: I am getting exception in console: Uncaught (in promise) undefined
+	Expected: I would not expect any exceptions in the console :-)
+
+
+2.	ID: B-002	Found: 23.11.2023	Priority: High
+	Subject: the user is able to enter the code to input fields
+
+	Steps to reproduce:
+	1. Go to: https://action.staging.focal.dev/
+	2. Try to type in any field: <script>alert(‘XSS’)</script>
+	Actual: user is able to type it into field
+	Expected: I would expect that we are not allowing user to type some characters that could be potentialy harmful
+
+3.	ID: B-003	Found: 23.11.2023	Priority: High
+	Subject: "Logged out due to inactive user account" while reset password
+
+	Steps to reproduce:
+	1. Go to: https://action.staging.focal.dev/
+	2. Type: XYZ in username field
+	3. Click: CONTINUE button
+	4. Type: test@test.com in email field
+	5. Click: SEND LINK TO EMAIL button
+	Actual: I am getting 2 errors: 
+			"Logged out due to inactive user account"
+			"User is inactive!"
+	Expected: I would expect more minningfull error, these doesn't make sense in this context
+
+4.	ID: B-004	Found: 23.11.2023	Priority: Normal
+	Subject: Text-based resources should be served with compression
+
+	Text-based resources should be served with compression to minimize total network bytes
+	I can see there are potential improvements in this area, this can affect performance
+
+5.	ID: B-005	Found: 23.11.2023	Priority: Low
+	Subject: Typo in reset password page
+
+	Steps to reproduce:
+	1. Go to: https://action.staging.focal.dev/
+	2. Type: XYZ in username field
+	3. Click: CONTINUE button
+	Actual: You can see the sentence: "Enter your email and we'll sent you a link to reset your password"
+	Expected: "Enter your email and we'll send you a link to reset your password" (there is a typo in word: sent)
+
+6.	ID: B-006	Found: 23.11.2023	Priority: Low
+	Subject: Typo in reset password page
+
+	Steps to reproduce:
+	1. Go to: https://action.staging.focal.dev/
+	2. Type: XYZ in username field
+	3. Click: CONTINUE button
+	4. Type: XYZ in email field
+	5. Click: SEND LINK TO EMAIL button
+	Actual: I am getting error: "Wrong argument (email) value. Possible []!"
+	Expected: I would expect more userfriendly message. I am not sure what does it mean: "Possible []!"
+
+7.	ID: B-007	Found: 23.11.2023	Priority: Low
+	Subject: Incosistency in HTML element locators/ids
+
+	Some objects have: id or data-testid and some doesnt. It would be more convinient to have keep consistency here
