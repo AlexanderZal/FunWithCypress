@@ -16,7 +16,7 @@ All bugs was found on staging environment. Tester was using Windows 10 and Chrom
 
 	Steps to reproduce:
 	1. Go to: https://action.staging.focal.dev/
-	2. Try to type in any field: <script>alert(‘XSS’)</script>
+	2. Try to type in any field: <script>alert(â€˜XSSâ€™)</script>
 	Actual: user is able to type it into field
 	Expected: I would expect that we are not allowing user to type some characters that could be potentialy harmful
 
@@ -51,7 +51,7 @@ All bugs was found on staging environment. Tester was using Windows 10 and Chrom
 	Expected: "Enter your email and we'll send you a link to reset your password" (there is a typo in word: sent)
 
 6.	ID: B-006	Found: 23.11.2023	Priority: Low
-	Subject: Typo in reset password page
+	Subject: Incomprehensible error when wrong email address in reset password
 
 	Steps to reproduce:
 	1. Go to: https://action.staging.focal.dev/
