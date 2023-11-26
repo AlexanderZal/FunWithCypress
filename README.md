@@ -7,7 +7,7 @@ git clone https://github.com/AlexanderZal/FunWithCypress.git
 cd FunWithCypress
 ```
 
-Install the dependencies and devDependencies and start the server.
+Install the dependencies
 
 ```npm install --force```
 
